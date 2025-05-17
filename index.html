@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yatsaap</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Login Screen -->
+  <div id="loginScreen" class="screen">
+    <h2>Login to Yatsaap</h2>
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
+    <div class="login-container">
+      <button id="loginBtn">Login</button>
+      <button id="signUpBtn">Sign Up</button>
+      <button id="google-login-button">Login with Google</button>
+    </div>
+  </div>
+
+  <!-- Chat Screen -->
+  <div id="chatScreen" class="screen hidden">
+    <div id="profileSection">
+      <button id="profileBtn">👤</button>
+      <div id="profilePopup" class="hidden">
+        <div class="profile-header">
+          <img src="12345.jpeg" alt="Profile Picture" class="profile-pic" />
+          <h2 id="profileUser"></h2>
+          <p class="status">Online</p>
+        </div>
+        <div class="profile-details">
+          <p class="email">Email: <span id="profileEmail"></span></p>
+          <p><strong>Username:</strong> <span id="profileUser"></span></p>
+        </div>
+        <button id="logoutBtn">Logout</button>
+        <button id="closePopupBtn">Close</button>
+      </div>
+    </div>
+
+    <div id="sidebar">
+<div id="sidebar">
+  <h3>Chats</h3>
+  <input type="text" id="userSearchInput" placeholder="Search by username..." />
+  <ul id="userList"></ul>
+</div>
+      <h3>Chats</h3>
+      <ul id="userList"></ul>
+    </div>
+
+    <div id="chatBox">
+      <div id="chatHeader">Select a chat</div>
+
+      <div id="receiverPopup" class="hidden">
+        <div class="receiver-header">
+          <h2 id="receiverName"></h2>
+          <p>Status: <span id="receiverStatus">Online</span></p>
+          <p>Email: <span id="receiverEmail"></span></p>
+          <p>Last Seen: <span id="receiverLastSeen"></span></p>
+        </div>
+        <button id="closeReceiverPopupBtn">Close</button>
+      </div>
+
+      <div id="chatArea"></div>
+
+      <div id="messageBox" class="hidden">
+        <input type="text" id="msgInput" placeholder="Type a message..." />
+        <button id="sendBtn">Send</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="firebaseConfig.js"></script>
+  <script type="module" src="googleauth.js"></script>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
